@@ -1,41 +1,34 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
+# Root .gitignore for Sleep Face monorepo
 
-# dependencies
+# Dependencies
 node_modules/
 
-# Expo
-.expo/
-dist/
-web-build/
-expo-env.d.ts
+# Environment Variables
+.env
+.env.*
+!.env.example
 
-# Native
-.kotlin/
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
+# Logs
+*.log
+logs/
 
-# Metro
-.metro-health-check*
-
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
-
-# macOS
+# OS
 .DS_Store
-*.pem
+Thumbs.db
 
-# local env files
-.env*.local
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# typescript
-*.tsbuildinfo
+# Temporary
+*.tmp
+*.temp
 
-# generated native folders
-/ios
-/android
+# Build outputs
+dist/
+build/
+
+# See backend/.gitignore and frontend/.gitignore for specific ignores

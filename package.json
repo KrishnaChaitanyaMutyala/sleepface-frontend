@@ -1,22 +1,20 @@
 {
   "name": "sleepface-fresh",
   "version": "1.0.0",
-  "main": "index.ts",
+  "description": "AI-powered sleep and skin health tracking app with React Native frontend and Python FastAPI backend",
+  "main": "index.js",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && python3 -m uvicorn main:app --reload --host 0.0.0.0 --port 8000",
+    "dev:frontend": "cd frontend && npx expo start",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && pip install -r requirements.txt",
+    "build:frontend": "cd frontend && npx expo build",
+    "start:backend": "cd backend && python3 -m uvicorn main:app --host 0.0.0.0 --port 8000"
   },
-  "dependencies": {
-    "expo": "~54.0.7",
-    "expo-status-bar": "~3.0.8",
-    "react": "19.1.0",
-    "react-native": "0.81.4"
-  },
+  "keywords": ["react-native", "expo", "python", "fastapi", "ai", "sleep-tracking", "skin-health"],
+  "author": "",
+  "license": "MIT",
   "devDependencies": {
-    "@types/react": "~19.1.0",
-    "typescript": "~5.9.2"
-  },
-  "private": true
+    "concurrently": "^8.2.2"
+  }
 }
